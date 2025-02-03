@@ -140,6 +140,13 @@ def show_cluster():
             Setiap titik di dalam grafik ini mewakili satu wilayah, dengan warna yang menunjukkan cluster yang berbeda. 
             Visualisasi ini membantu kita memahami sebaran geografis wilayah-wilayah yang mengalami dampak banjir dengan intensitas yang berbeda-beda.
         """)
+        st.write("""
+            **Keterangan warna:**
+            - 🟣 **Ungu** → Cluster 1 (**Dampak Ringan**)
+            - 🟢 **Hijau Kebiruan** → Cluster 2 (**Dampak Sedang**)
+            - 🟡 **Kuning** → Cluster 3 (**Dampak Berat**)
+            - ❌ **Merah X** → **Centroid (Titik Pusat Cluster)**
+            """)
         fig1 = plt.figure(figsize=(6, 4))
         ax1 = fig1.add_subplot(111, projection='3d')
         scatter3d = ax1.scatter(scaled_features[:, 0], scaled_features[:, 1], scaled_features[:, 2],
